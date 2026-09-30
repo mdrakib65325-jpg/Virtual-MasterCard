@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Virtual MasterCard Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" class="auth">
+  <div class="box">
+    <h1>Virtual MasterCard</h1><p>Admin Dashboard</p>
+    <input id="name" placeholder="আপনার নাম">
+    <input id="email" type="email" placeholder="ইমেইল">
+    <input id="pass" type="password" placeholder="পাসওয়ার্ড">
+    <button onclick="register()">Register / Login</button>
+    <small>এটি একটি demo system। এখানে কোনো আসল কার্ড ইস্যু হয় না।</small>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<header><b>💳 Virtual MasterCard</b><button class="logout" onclick="logout()">Logout</button></header>
+<main>
+<section class="stats">
+ <div><span>Total</span><strong id="total">0</strong></div>
+ <div><span>Active</span><strong id="active">0</strong></div>
+ <div><span>Pending</span><strong id="pending">0</strong></div>
+</section>
+
+<section class="panel">
+<h2>নতুন Virtual Card তৈরি করুন</h2>
+<div class="grid">
+<input id="customer" placeholder="Customer Name">
+<input id="customerEmail" type="email" placeholder="Customer Email">
+<input id="nickname" placeholder="Card Nickname">
+<select id="theme"><option>Black</option><option>Blue</option><option>Gold</option></select>
+</div>
+<button onclick="createCard()">Create Demo Card</button>
+</section>
+
+<section class="panel">
+<h2>Card List</h2>
+<div id="cards"></div>
+</section>
+</main>
+</div>
+<script src="app.js"></script>
+</body></html>
